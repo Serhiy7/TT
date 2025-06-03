@@ -1,0 +1,21 @@
+// src/pages/HomePage/HomePage.module.scss
+
+@use "../../styles/variables" as *; // если нужны глобальные переменные
+
+.homePage {
+  padding: 2rem;
+  background-color: #fafafa; // лёгкий фон всей страницы
+
+  h1 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #222222;
+  }
+
+  .grid {
+    display: grid;
+    /* Настраиваем сетку: от 1 колонки на узких экранах до 4 колонок на больших */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}

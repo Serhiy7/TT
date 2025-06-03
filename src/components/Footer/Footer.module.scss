@@ -1,0 +1,50 @@
+.footer {
+  background-color: #2a9d8f;
+  color: #ffffff;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  margin-top: auto; // чтобы футер «прилипал» к низу страницы, если контента мало
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .copy {
+    margin: 0;
+    padding-bottom: 0.5rem;
+  }
+
+  .socials {
+    display: flex;
+    gap: 1rem;
+
+    .socialLink {
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+
+      &:hover {
+        color: #e0f7f1;
+        border-color: #e0f7f1;
+      }
+    }
+  }
+}
+
+/* Адаптивность: компактнее на очень узких экранах */
+@media (max-width: 480px) {
+  .footer {
+    font-size: 0.8rem;
+    .socials {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+}

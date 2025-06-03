@@ -1,0 +1,69 @@
+// src/components/PropertyCard/PropertyCard.module.scss
+
+@use "../../styles/variables" as *; // если вы используете глобальные переменные (цвета, шрифты)
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+
+  .photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #f0f0f0; // если нет изображения, будет серый фон
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem 0;
+      color: #222222;
+      line-height: 1.3;
+    }
+
+    .details {
+      font-size: 0.9rem;
+      color: #666666;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+
+      // Внутри .details формируем: "Город • 2 комн. • 65 м²"
+      // если вам нужно подчеркнуть точки, можно добавить через псевдоэлементы, но здесь простой вариант:
+      span {
+        &:not(:last-child)::after {
+          content: " • ";
+        }
+      }
+    }
+
+    .price {
+      margin-top: auto; // чтобы цена всегда была «прижата» вниз карточки, если описание короткое
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: $primary-color; // или #2a9d8f
+      line-height: 1.2;
+
+      // Если нужно динамическое форматирование цены (например, добавление пробелов в числах),
+      // это лучше делать в React, а здесь просто задаём цвет и отступы.
+    }
+  }
+}

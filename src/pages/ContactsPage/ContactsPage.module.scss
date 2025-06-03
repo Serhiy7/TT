@@ -1,0 +1,42 @@
+@use "sass:color";
+@use "../../styles/variables" as *;
+
+.contacts {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: $text-color;
+  }
+
+  ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+
+    li {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      color: $text-color;
+
+      a {
+        color: $primary-color;
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+          // Осветляем ссылку при наведении
+          color: color.adjust($primary-color, $lightness: 10%);
+        }
+      }
+    }
+  }
+}

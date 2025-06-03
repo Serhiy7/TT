@@ -1,0 +1,98 @@
+// src/components/Header/Header.module.scss
+
+@use "sass:color";
+@use "../../styles/variables" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: $bg-color;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  padding: 0.75rem 0;
+
+  .container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $primary-color;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: color.adjust($primary-color, $lightness: -10%);
+    }
+  }
+
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      position: relative;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $text-color;
+      text-decoration: none;
+      padding: 0.5rem 0;
+      transition: color 0.2s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background-color: $primary-color;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: $primary-color;
+        &::after {
+          width: 100%;
+        }
+      }
+
+      // Селектор для активной ссылки (когда NavLink даёт ей класс "active")
+      &.active {
+        color: $primary-color;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      gap: 1rem;
+
+      a {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+
+      a {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
