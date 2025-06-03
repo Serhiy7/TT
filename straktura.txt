@@ -1,0 +1,42 @@
+real-estate-hub/
+├── README.md
+├── package.json
+├── public/
+│   └── index.html
+├── src/
+│   ├── api/
+│   │   └── properties.js         // обёртка над fetch/axios
+│   ├── assets/
+│   │   └── images/               // какие-то статичные картинки-заглушки
+│   ├── components/
+│   │   ├── Header/
+│   │   │   ├── Header.jsx
+│   │   │   └── Header.module.scss
+│   │   ├── Footer/
+│   │   │   ├── Footer.jsx
+│   │   │   └── Footer.module.scss
+│   │   ├── PropertyCard/
+│   │   │   ├── PropertyCard.jsx
+│   │   │   └── PropertyCard.module.scss
+│   │   ├── Filters/
+│   │   │   ├── Filters.jsx
+│   │   │   └── Filters.module.scss
+│   │   └── LoadingSpinner/       // индикатор загрузки
+│   │       ├── LoadingSpinner.jsx
+│   │       └── LoadingSpinner.module.scss
+│   ├── pages/
+│   │   ├── HomePage/
+│   │   │   ├── HomePage.jsx
+│   │   │   └── HomePage.module.scss
+│   │   └── PropertyDetailPage/
+│   │       ├── PropertyDetailPage.jsx
+│   │       └── PropertyDetailPage.module.scss
+│   ├── styles/
+│   │   ├── _variables.scss
+│   │   └── globals.scss
+│   ├── App.jsx
+│   ├── index.jsx
+│   └── setupProxy.js             // если используем proxy к JSON Server
+└── mock-server/
+    ├── db.json                   // данные для JSON Server
+    └── package.json              // скрипт запуска mock-бэка
