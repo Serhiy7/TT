@@ -4,15 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    
     "mock": "json-server --watch mock-server/db.json --port 4000",
-
-    
     "dev": "concurrently \"npm run mock\" \"vite\"",
-
-   
     "start": "vite",
-
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -35,6 +29,6 @@
     "globals": "^16.0.0",
     "sass": "^1.89.1",
     "vite": "^6.3.5",
-    "json-server": "^0.17.3" 
+    "json-server": "^0.17.3"
   }
 }
