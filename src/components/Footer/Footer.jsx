@@ -23,14 +23,14 @@ const Footer = () => {
           >
             LinkedIn
           </a>
-          {/* <a
+          <a
             href="https://t.me/ваш_профиль"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialLink}
           >
             Telegram
-          </a> */}
+          </a>
         </div>
       </div>
     </footer>
